@@ -1,15 +1,23 @@
 import Link from "next/link";
 import { BookOpen, Search } from "lucide-react";
 
-export function SiteHeader() {
+type SiteHeaderProps = {
+  siteName?: string;
+  tagline?: string;
+};
+
+export function SiteHeader({
+  siteName = "منهاج",
+  tagline = "رسالتي إحياء منهاج النبوة",
+}: SiteHeaderProps) {
   return (
     <header className="site-header" id="page-top">
       <div className="section-wrap header-inner">
         <Link aria-label="منهاج — الصفحة الرئيسية" className="brand" href="/">
           <span className="brand-mark" aria-hidden="true"><BookOpen size={22} /></span>
           <span className="brand-copy">
-            <strong>منهاج</strong>
-            <span>رسالتي إحياء منهاج النبوة</span>
+            <strong>{siteName}</strong>
+            <span>{tagline}</span>
           </span>
         </Link>
 

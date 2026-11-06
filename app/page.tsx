@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import {
   ArrowLeft,
   ArrowUpLeft,
@@ -11,6 +12,7 @@ import {
 import { MaterialCard } from "@/components/material-card";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
+import { SiteHeaderFromDatabase } from "@/components/site-header-from-db";
 import { SectionHeading } from "@/components/section-heading";
 
 const samplePathways = [
@@ -49,7 +51,9 @@ export default function Home() {
 
       <main id="main-content">
         <section className="hero-shell" aria-labelledby="hero-title">
-          <SiteHeader />
+          <Suspense fallback={<SiteHeader />}>
+            <SiteHeaderFromDatabase />
+          </Suspense>
           <div className="hero section-wrap">
             <div className="hero-copy">
               <p className="eyebrow">
