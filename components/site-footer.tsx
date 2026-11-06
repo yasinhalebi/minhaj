@@ -9,7 +9,7 @@ export function SiteFooter() {
           <span>منهاج</span>
         </div>
         <p>فهرس مستقل للمحتوى التعليمي المنشور على YouTube.</p>
-        <a href="#page-top" className="footer-top-link">
+        <a href="/#page-top" className="footer-top-link">
           العودة للأعلى <ArrowUpLeft size={16} aria-hidden="true" />
         </a>
         <small>معاينة أولية — المحتوى الظاهر تجريبي وغير منشور.</small>

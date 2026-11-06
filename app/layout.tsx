@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Alexandria } from "next/font/google";
+import { KeyboardShortcuts } from "@/components/keyboard-shortcuts";
 import "./globals.css";
 
 const alexandria = Alexandria({
@@ -20,7 +21,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="ar" dir="rtl" className={`${alexandria.variable} min-h-full`}>
-      <body>{children}</body>
+      <body><KeyboardShortcuts />{children}</body>
     </html>
   );
 }
