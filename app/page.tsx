@@ -46,10 +46,10 @@ export default function Home() {
       <a className="skip-link" href="#main-content">
         انتقل إلى المحتوى
       </a>
-      <SiteHeader />
 
       <main id="main-content">
         <section className="hero-shell" aria-labelledby="hero-title">
+          <SiteHeader />
           <div className="hero section-wrap">
             <div className="hero-copy">
               <p className="eyebrow">

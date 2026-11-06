@@ -1525,3 +1525,87 @@ a:focus-visible {
     transition: none;
   }
 }
+
+/* The navigation sits directly on the hero; it has no separate panel. */
+.site-header {
+  position: relative;
+  inset-block-start: auto;
+  z-index: 3;
+  border: 0;
+  background: transparent;
+  backdrop-filter: none;
+}
+
+.header-inner {
+  width: min(var(--container-width), calc(100% - 64px));
+  min-height: 78px;
+  margin-block: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  backdrop-filter: none;
+}
+
+.main-nav {
+  gap: clamp(18px, 3vw, 34px);
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+}
+
+.main-nav a {
+  padding: 5px 0;
+}
+
+.main-nav a:hover {
+  transform: none;
+  background: transparent;
+  color: var(--color-accent);
+  box-shadow: none;
+}
+
+.header-search {
+  min-height: 39px;
+  border: 0;
+  border-radius: 99px;
+  background: transparent;
+  color: rgb(255 255 255 / 84%);
+  backdrop-filter: none;
+}
+
+.header-search:hover {
+  border-color: transparent;
+  background: transparent;
+  color: var(--color-accent);
+}
+
+@media (max-width: 900px) {
+  .header-inner {
+    width: min(var(--container-width), calc(100% - 48px));
+  }
+}
+
+@media (max-width: 640px) {
+  .header-inner {
+    width: calc(100% - 32px);
+    min-height: 66px;
+    margin: 0 auto;
+  }
+
+  .main-nav {
+    width: 100%;
+    justify-content: space-between;
+    margin-block-end: 4px;
+    padding: 4px 0 10px;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+  }
+
+  .main-nav a {
+    padding: 5px 0;
+  }
+}
