@@ -51,11 +51,11 @@ async function requireYouTubeKey() {
 async function youtube(endpoint, params = {}) {
   const key = await requireYouTubeKey();
   const url = new URL(`${YOUTUBE_API}/${endpoint}`);
-  for (const [name, value] of Object.entries({ ...params, key })) {
+  for (const [name, value] of Object.entries(params)) {
     if (value !== undefined && value !== null && value !== "") url.searchParams.set(name, String(value));
   }
   let response;
-  try { response = await fetch(url, { headers: { accept: "application/json" } }); }
+  try { response = await fetch(url, { headers: { accept: "application/json", "x-goog-api-key": key } }); }
   catch { throw new Error("تعذر الاتصال بخدمة YouTube Data API. تحقق من الشبكة وإعداد المفتاح."); }
   const payload = await response.json().catch(() => ({}));
   if (!response.ok) {
